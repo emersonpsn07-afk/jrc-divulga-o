@@ -1,3 +1,32 @@
-Site em desenvolvimento! Esse é um projeto que estou realizando para o meu pai, que é autônomo e trabalha na área de divulgação de som na cidade de Cosmopolis-SP - Site focado para atrair clientes e realizar orçamentos.
+# JRC Divulgação
 
-Segue o link: https://emersonpsn07-afk.github.io/jrc-divulga-o/
+Este projeto tem como objetivo facilitar a divulgação de informações, conteúdos e comunicados de forma simples, organizada e acessível.
+
+## 🚀 Funcionalidades
+
+- Cadastro e gerenciamento de conteúdos
+- Publicação de avisos e comunicados
+- Interface simples e intuitiva
+- Organização de informações por categorias
+
+## 🛠️ Tecnologias utilizadas
+
+- HTML5 / CSS3 / JavaScript
+- (adicione aqui seu framework, se houver: React, Vue, etc.)
+- (backend, se existir: Node.js, PHP, Python, etc.)
+- (banco de dados, se houver: MySQL, MongoDB, etc.)
+
+## 📦 Como executar o projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/Emerson-O-Campos/jrc-divulga-o
+
+# Acesse a pasta do projeto
+cd jrc-divulga-o
+
+# Instale as dependências (se houver)
+npm install
+
+# Execute o projeto
+npm start
