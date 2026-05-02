@@ -19,4 +19,4 @@ Este projeto tem como objetivo facilitar a divulgação de informações, conte�
 ## 📍 Visualizar o projeto
 
 Você pode acessar a versão publicada aqui:  
-👉 🌐 https://emerson-o-campos.github.io/jrc-divulga-o/
+👉 🌐 https://emerson-o-campos.github.io/jrc-divulgacao/
