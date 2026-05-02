@@ -4,17 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JRC Divulgação - Som de Rua em Cosmópolis</title>
+  
+  <!-- SEO Metadados -->
+  <meta name="description" content="JRC Divulgação - Som de rua em Cosmópolis-SP. Propaganda sonora com moto, gravação de spots e divulgação para eventos. Solicite orçamento pelo WhatsApp!">
+  <meta name="keywords" content="divulgação, som de rua, propaganda volante, Cosmópolis, JRC">
+  <meta name="author" content="JRC Divulgação">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.jrcdivulgacao.com.br">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts com otimização -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome (ícones) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Flatpickr (Calendário) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
+  <!-- SKIP TO CONTENT (acessibilidade) -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
   <!-- HEADER -->
   <header class="header">
@@ -35,7 +50,7 @@
         <i class="fa-brands fa-whatsapp"></i> Orçamento
       </a>
 
-      <button class="menu-mobile" id="menuMobileBtn">
+      <button class="menu-mobile" id="menuMobileBtn" aria-label="Menu">
         <i class="fa-solid fa-bars"></i>
       </button>
     </nav>
@@ -54,7 +69,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- HERO -->
     <section class="hero">
@@ -125,13 +140,13 @@
             </thead>
 
             <tbody>
-              <tr>
+              <tr class="popular">
                 <td>Propaganda Volante (Moto)</td>
                 <td>1 Hora</td>
                 <td>R$ 40,00</td>
               </tr>
-              <tr>
-                <td>Pacote Comercial</td>
+              <tr class="destaque">
+                <td>Pacote Comercial <span class="badge">🔥 Mais vendido</span></td>
                 <td>5 Horas</td>
                 <td>R$ 200,00</td>
               </tr>
@@ -155,10 +170,10 @@
         <p class="subtitle">Clique nas imagens para visualizar em tamanho maior.</p>
 
         <div class="grid-galeria">
-          <div class="foto"><img src="foto1.jpg" alt="Moto JRC em frente ao mercado"></div>
-          <div class="foto"><img src="foto2.jpg" alt="Divulgação em ótica"></div>
-          <div class="foto"><img src="foto3.jpg" alt="JRC Divulgação no centro"></div>
-          <div class="foto"><img src="foto4.jpg" alt="Equipamento de som"></div>
+          <div class="foto"><img src="https://placehold.co/600x400/2a2a2a/white?text=Moto+JRC" alt="Moto da JRC Divulgação equipada com sistema de som" loading="lazy"></div>
+          <div class="foto"><img src="https://placehold.co/600x400/2a2a2a/white?text=Divulgação+em+Ótica" alt="Equipe JRC realizando divulgação em frente a uma ótica" loading="lazy"></div>
+          <div class="foto"><img src="https://placehold.co/600x400/2a2a2a/white?text=Centro+Cosmópolis" alt="Ação de divulgação no centro movimentado de Cosmópolis" loading="lazy"></div>
+          <div class="foto"><img src="https://placehold.co/600x400/2a2a2a/white?text=Equipamento+de+Som" alt="Equipamento profissional de áudio da JRC Divulgação" loading="lazy"></div>
         </div>
       </div>
     </section>
@@ -171,7 +186,7 @@
 
         <form id="formOrcamento" class="form-box">
           <div class="input-group">
-            <label>Seu Nome</label>
+            <label>Seu Nome *</label>
             <input type="text" id="nome" placeholder="Digite seu nome" required>
           </div>
 
@@ -181,7 +196,7 @@
           </div>
 
           <div class="input-group">
-            <label>Tipo de Divulgação</label>
+            <label>Tipo de Divulgação *</label>
             <select id="tipo" required>
               <option value="">Selecione...</option>
               <option value="Som automotivo (Moto)">Som automotivo (Moto)</option>
@@ -191,7 +206,50 @@
             </select>
           </div>
 
-          <div class="input-group">
+          <!-- SOM AUTOMOTIVO (MULTI DIAS) -->
+          <div class="input-group" id="campoSomDias" style="display:none;">
+            <label>Dias desejados *</label>
+            <input type="text" id="diasSom" placeholder="Selecione os dias (Segunda a Sábado)">
+          </div>
+
+          <!-- EVENTO LOCAL (DIA ÚNICO) -->
+          <div class="input-group" id="campoEventoDia" style="display:none;">
+            <label>Dia do evento *</label>
+            <input type="text" id="diaEvento" placeholder="Selecione o dia do evento (Segunda a Sábado)">
+          </div>
+
+          <!-- GRAVAÇÃO DE SPOT -->
+          <div id="campoSpot" style="display:none;">
+
+            <div class="input-group">
+              <label>Tempo do Spot *</label>
+              <select id="tempoSpot">
+                <option value="">Selecione...</option>
+                <option value="15 segundos">15 segundos</option>
+                <option value="30 segundos">30 segundos</option>
+                <option value="45 segundos">45 segundos</option>
+                <option value="60 segundos">60 segundos</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label>Texto já pronto?</label>
+              <select id="textoProntoSpot">
+                <option value="">Selecione...</option>
+                <option value="Sim, tenho o texto pronto">Sim</option>
+                <option value="Não, preciso de ajuda para criar o texto">Não</option>
+              </select>
+            </div>
+
+            <div class="input-group" id="campoTextoSpot" style="display:none;">
+              <label id="labelTextoSpot">Texto do Spot *</label>
+              <textarea id="textoSpot" placeholder="Digite aqui o texto que será gravado no spot..." rows="5"></textarea>
+            </div>
+
+          </div>
+
+          <!-- DURAÇÃO -->
+          <div class="input-group" id="campoDuracao">
             <label>Duração (horas)</label>
             <input type="text" id="duracao" placeholder="Ex: 1 hora, 5 horas...">
           </div>
@@ -223,7 +281,8 @@
             height="450"
             style="border:0;"
             allowfullscreen=""
-            loading="lazy">
+            loading="lazy"
+            title="Mapa de localização da JRC Divulgação">
           </iframe>
         </div>
       </div>
@@ -233,11 +292,18 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 JRC Divulgação - Cosmópolis-SP</p>
+    <div class="footer-content">
+      <p>© 2026 JRC Divulgação - Cosmópolis-SP</p>
+      <div class="social-icons">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://wa.me/5519988587512" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
   </footer>
 
   <!-- BOTÃO WHATSAPP FIXO -->
-  <a href="https://wa.me/5519988587512" class="whatsapp-fixo pulse" target="_blank">
+  <a href="https://wa.me/5519988587512" class="whatsapp-fixo pulse" target="_blank" aria-label="WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -246,6 +312,13 @@
     <span class="modal-close" id="modalClose">&times;</span>
     <img class="modal-img" id="modalImg" src="" alt="">
   </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastContainer"></div>
+
+  <!-- Flatpickr -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
 
   <script src="script.js"></script>
 </body>
