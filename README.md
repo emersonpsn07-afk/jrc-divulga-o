@@ -5,7 +5,7 @@ Este projeto tem como objetivo facilitar a divulgação de informações, conte�
 ## 👀 Preview
 
 <p align="center">
-  <img src="img/jrc-divulgacao.png" alt="Preview do Pet Love Care" width="900">
+  <img src="img/home-jrcdivulgacao.png" alt="Preview do Pet Love Care" width="900">
 </p>
 
 ## 🚀 Funcionalidades
