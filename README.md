@@ -2,6 +2,12 @@
 
 Este projeto tem como objetivo facilitar a divulgação de informações, conteúdos e comunicados de forma simples, organizada e acessível.
 
+## 👀 Preview
+
+<p align="center">
+  <img src="img/jrc-divulgacao.png" alt="Preview do Pet Love Care" width="900">
+</p>
+
 ## 🚀 Funcionalidades
 
 - Cadastro e gerenciamento de conteúdos
